@@ -23,7 +23,7 @@
   * Showcase a way in which data can not only be easy to manage, but al
 
 ## Instructions on use:
-  * Run the pokemon_db.py python script and follow the terminal prompts for easy use.
+  * Run the pokemon_db.py (in pokemon_db directory) python script and follow the terminal prompts for easy use.
   * Postgresql password for the user should be input into the config.py python script as password = YOURPASSWORDHERE.
 
 
