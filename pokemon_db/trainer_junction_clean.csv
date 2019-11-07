@@ -1,4 +1,4 @@
-tjunction_id,pokedex_number,trainerID,pokelevel
+tjunction_id,pokedex_number,trainer_id,pokelevel
 0,235,0,60
 1,235,1,30
 2,235,147,60
