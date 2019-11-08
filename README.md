@@ -23,6 +23,8 @@
   * Images: https://www.kaggle.com/thedagger/pokemon-generation-one (10k+ Images)
 
 ## Instructions on use:
+  * Extraction and Transformation are done through the Jupyter Notebook (Pokemon.ipnyb)
+  * Loading is done in the pokemon_db.py
   * Run the pokemon_db.py (in pokemon_db directory) python script and follow the terminal prompts for easy use.
   * Postgresql password for the user should be input into the config.py python script as password = YOURPASSWORDHERE.
   * Pokemon names need to be spelled correctly for the search. Capitalization does not matter.
