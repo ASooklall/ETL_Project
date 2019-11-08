@@ -1,10 +1,12 @@
-# SQL Database Script for PokeDex and TrainerDex
+######################################################
+### SQL Database Script for PokeDex and TrainerDex ###
+######################################################
+
 import numpy as np
 import pandas as pd
 from sqlalchemy import create_engine
 from config import password
 import pprint as pp
-
 
 # Set locations for CSV Files and create dataframes
 csv_file1 = "pokedex_clean.csv"
@@ -16,14 +18,9 @@ trainer_df = pd.read_csv(csv_file2)
 csv_file3 = "trainer_junction_clean.csv"
 trainer_junction_df = pd.read_csv(csv_file3)
 
-
 # Connect to PostgreSQL
 rds_connection_string = "postgres:"+password+"@localhost:5432/pokemon_db"
 engine = create_engine(f'postgresql://{rds_connection_string}')
-
-## Get Table Names
-# engine.table_names()
-
 
 # Read Dataframes into SQL and replace table if exists
 pokedex_df.to_sql(name='pokedex', con=engine, if_exists='replace', index=False)
@@ -31,15 +28,19 @@ trainer_df.to_sql(name='trainer', con=engine, if_exists='replace', index=False)
 trainer_junction_df.to_sql(name='trainer_junction', con=engine, if_exists='replace', index=False)
 
 
-# Search Function
+#################################################
+############ Search Function Script  ############
+#################################################
+
 # Resume_Search is a nested inner function that allows the user to choose whether or not they want to search again.
+
 def search():
     def resume_search():
         resume = input ("Would you like to search again? (Yes or No) ")
-        if resume in ["yes","Yes","yEs","yeS","YEs","yES","YeS","YES","y","Y"]:
+        if resume.lower() in ["yes", "y"]:
             search()
         else:
-            print ('Search Canceled. Ending Prompt.')
+            print ('Search Canceled. Closing Script.')
 
     request = 0
     request = input ("What would you like to search for? (Select the number of the menu option)\
@@ -97,5 +98,13 @@ def search():
         print ("That isn't a menu option number. Please try again.")
         search()
 
-# Call the search function
-search()
+##########################################
+######## Call The Search Function ########
+##########################################
+
+if __name__ == '__main__':
+    search()
+
+##########################################
+############### END SCRIPT ###############
+##########################################
