@@ -1,2 +1,2 @@
-password = 'PASSWORDHERE'
+password = 'PASSWORD'
 
